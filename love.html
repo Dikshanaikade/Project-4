@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title></title>
+ <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+
+<style >
+ body{
+  background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url('https://storage.pixteller.com/designs/designs-images/2019-03-27/05/love-and-passion-background-backgrounds-romantic-1-5c9b9947439b9.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  height: 100vh;
+  position: relative;
+ }
+ header{
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+ }
+
+ .round3 {
+  border-radius: 50px;
+  background:#F8D7E1;
+  padding: 20px; 
+  width: 200px;
+  height: 350px;  
+}
+
+.button {
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #EA669B;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #F8D7E1;
+}
+.button:hover {background-color: #D1539B}
+
+.button:active {
+  background-color: #EA669B;
+  box-shadow: 0 5px #F8D7E1;
+  transform: translateY(4px);
+}
+</style>
+</head>
+<body>
+
+  <audio id="myAudio">
+    <source src="Tune.ogg" type="audio/ogg">
+    <source src="Tune.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+<header>
+ 
+<div class="card w-50 m-auto text-center  round3">
+  <div class="card-header  text-white" style="background-color: #EB518F;">LOVE CALCULATOR</div>
+  <div class="card-body">
+   <form class="form-inline w-75 m-auto">
+    <div class="form-group">
+     <input type="text" name="" class="form-control text-center" placeholder="Your Name" id="name" >
+    </div>
+    <div class="pl-4 pr-4">
+     <span> + </span>
+    </div>
+    <div class="form-group">
+     <input type="text" name="" class="form-control text-center" placeholder=" Love Name" id="lname">
+    </div>
+   </form> <br>
+    <div class="w-70 m-auto">
+     <button  class="button"  onclick="checkloveper()"> Click </button>
+    </div>
+    <br>
+    <div>
+     <input type="text" name="" placeholder="LOVE PERCENTAGE" class="form-control text-center w-25 m-auto" id="lovevalue">
+    </div>
+  </div> 
+  <div class="card-footer ">God Bless Your RelationShip</div>
+</div>
+
+</header>
+
+<script>
+ function checkloveper(){
+  var x = document.getElementById("myAudio"); 
+  x.play(); 
+  var name = document.getElementById('name').value;
+  var lname = document.getElementById('lname').value;
+
+  if(name == ""){
+   alert('Please enter your name');
+  }else if (name.length <=2 ) {
+   alert('Min lenght is 3')
+  }else if(!isNaN(name)){
+   alert('Numbers are not allowed');
+  }
+
+  else if(lname == ""){
+   alert('Please enter your love name');
+  }else if (lname.length <=2 ) {
+   alert('Min lenght is 3')
+  }else if(!isNaN(lname)){
+   alert('Numbers are not allowed');
+  }
+  else{
+  var lovdata = Math.random() * 100;
+  lovdata = Math.floor(lovdata);
+  document.getElementById('lovevalue').value = lovdata + "%"; 
+  }
+  
+ }
+</script>
+</body>
+
+</html>
